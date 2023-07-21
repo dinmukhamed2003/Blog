@@ -16,9 +16,7 @@
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{ product.title}}</h5>
-                    {% for category in product.categories.all %}
-                        <p>{{ category.title }}</p>
-                    {% endfor %}
+                        <p>{{ product.category.title }}</p>
                 <a href="#" class="btn btn-primary">Подробнее</a>
             </div>
         </div>
