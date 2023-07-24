@@ -13,11 +13,11 @@
     <div class="products">
     {% for product in products %}
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img style="width: 190px;" src="/media/{{ product.image }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{ product.title}}</h5>
                         <p>{{ product.category.title }}</p>
-                <a href="#" class="btn btn-primary">Подробнее</a>
+                <a href="/product/{{ product.id }}" class="btn btn-primary">Подробнее</a>
             </div>
         </div>
     {% endfor %}
