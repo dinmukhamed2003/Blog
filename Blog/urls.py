@@ -19,17 +19,21 @@ from django.urls import path
 from django.conf.urls.static import static
 
 from Blog import settings
-from product.views import hello_view , now_time_view , goodbye_view, products_view, main_view, category_view, detail_view
+from product import views
+from users import views as users_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', hello_view),
-    path('time/', now_time_view),
-    path('goodbye/', goodbye_view),
-    path('product/', products_view),
-    path('', main_view),
-    path('categories/', category_view),
-    path('product/<int:id>/', detail_view),
+    path('hello/', views.hello_view),
+    path('time/', views.now_time_view),
+    path('goodbye/', views.goodbye_view),
+    path('product/', views.products_view),
+    path('', views.main_view),
+    path('categories/', views.category_view),
+    path('product/<int:id>/', views.detail_view),
+    path('product/create/', views.products_create_view),
 ]
+
+
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
